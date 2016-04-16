@@ -5,7 +5,9 @@
 </head>
 <body>
   <div ng-controller="BlabController as blab">
-    <h1>{{text}}</h1>
+    <div ng-repeat="item in text">
+      <div>{{item.ethereumAddress}} {{item.tokenAmount}}</div>
+    </div>
   </div>
 
   <script src="vendor/angular-1.5.4.js"></script>
