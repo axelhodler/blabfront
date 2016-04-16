@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="blab" lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>blabfront</title>
 </head>
 <body>
-  <h1>hi</h1>
+  <div ng-controller="BlabController as blab">
+    <h1>{{text}}</h1>
+  </div>
 
   <script src="vendor/angular-1.5.4.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
