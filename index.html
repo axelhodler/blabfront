@@ -4,14 +4,12 @@
   <meta charset="UTF-8">
 </head>
 <body>
-  <div ng-controller="BlabController as blab">
-    <div ng-repeat="item in text">
-      <div>{{item.ethereumAddress}} {{item.tokenAmount}}</div>
-    </div>
-  </div>
+  <div ng-view></div>
 
   <script src="vendor/angular-1.5.4.js"></script>
   <script src="vendor/angular-route-1.5.4-build.4747.js"></script>
   <script src="src/app.js"></script>
+  <script src="src/login/controllers/login_controller.js"></script>
+  <script src="src/ledger/controllers/ledger_controller.js"></script>
 </body>
 </html>
