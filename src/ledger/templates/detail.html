@@ -1,0 +1,6 @@
+Account: {{ ethereumAddress }}
+
+<form ng-submit="createTransaction()">
+  <input type="number" id="amount" ng-model="amountToSend" required/>
+  <input type="submit" type="button" value="Send" ng-disabled="login_form.$invalid"/>
+</form>

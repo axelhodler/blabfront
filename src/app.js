@@ -14,4 +14,8 @@ angular.module('blab', [
         templateUrl: 'src/ledger/templates/overview',
         controller: 'BlabController'
       })
+      .when('/ledger/:id', {
+        templateUrl: 'src/ledger/templates/detail',
+        controller: 'LedgerDetailController'
+      })
   }]);
