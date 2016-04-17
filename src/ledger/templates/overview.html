@@ -1,3 +1,12 @@
-<div ng-repeat="item in text">
-  <div>{{item.ethereumAddress}} {{item.tokenAmount}}</div>
-</div>
+<table border="1">
+  <tr>
+    <th>Addr</th>
+    <th>Amount</th>
+    <th>Action</th>
+  </tr>
+  <tr ng-repeat="item in text">
+    <td>{{item.ethereumAddress}}</td>
+    <td>{{item.tokenAmount}}</td>
+    <td><input type="button" value="Send"/></td>
+  </tr>
+</table>
