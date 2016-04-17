@@ -1,6 +1,6 @@
 <h1>login form</h1>
 <form name="login_form" ng-submit="login()">
-  <input id="username" ng-model="username" required/>
-  <input type="password" ng-model="password" required/>
-  <input type="submit" ng-disabled="login_form.$invalid"/>
+  <input id="username" ng-model="username" placeholder="email" required/>
+  <input type="password" ng-model="password" placeholder="password" required/>
+  <input type="submit" class="btn btn-primary" ng-disabled="login_form.$invalid"/>
 </form>

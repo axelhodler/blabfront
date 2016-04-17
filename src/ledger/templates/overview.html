@@ -1,4 +1,4 @@
-<table>
+<table class="table">
   <tr>
     <th>Addr</th>
     <th>Amount</th>
@@ -7,6 +7,6 @@
   <tr ng-repeat="item in text | orderBy:'-tokenAmount'">
     <td>{{item.ethereumAddress}}</td>
     <td>{{item.tokenAmount}}</td>
-    <td><a href="#/ledger/{{item.ethereumAddress}}">-></a></td>
+    <td><a class="btn btn-primary" href="#/ledger/{{item.ethereumAddress}}">Details</a></td>
   </tr>
 </table>
