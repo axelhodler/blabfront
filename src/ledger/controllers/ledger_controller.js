@@ -12,4 +12,8 @@ angular.module('blab')
         $scope.text = resp.data;
       })
     });
+
+    $scope.createTransaction = function(to, entry) {
+      console.log('sending amount ' + entry.amount + ' to ' + to);
+    }
 });
