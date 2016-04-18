@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('blab')
-  .controller('BlabController', function($scope, $http, $localForage) {
+  .controller('BlabController', function($scope, $http, TokenRepository) {
     $scope.text = [];
-    $localForage.getItem('jwt').then(function(token) {
+    TokenRepository.fetchToken().then(function(token) {
       $http.get('http://localhost:3000/ledgers', {
         headers: {
           "Authorization": token
