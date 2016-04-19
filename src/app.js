@@ -4,6 +4,7 @@ angular.module('blab', [
   'ngRoute',
   'LocalForageModule'
 ])
+
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
@@ -18,4 +19,6 @@ angular.module('blab', [
         templateUrl: 'src/ledger/templates/detail',
         controller: 'LedgerDetailController'
       })
-  }]);
+  }])
+
+  .constant('REST_API_URL', 'http://gkapi.hodler.co:3000');
