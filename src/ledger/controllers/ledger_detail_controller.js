@@ -3,7 +3,7 @@
 angular.module('blab')
   .controller('LedgerDetailController', LedgerDetailController);
 
-function LedgerDetailController($scope, $routeParams, $http, TokenRepository, REST_API_URL) {
+function LedgerDetailController($scope, $routeParams, $http, $location, TokenRepository, REST_API_URL) {
   $scope.ethereumAddress = $routeParams.id;
 
   $scope.createTransaction = function() {
@@ -20,5 +20,6 @@ function LedgerDetailController($scope, $routeParams, $http, TokenRepository, RE
         }
       );
     });
+    $location.path('/ledger');
   }
 };
