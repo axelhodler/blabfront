@@ -4,14 +4,15 @@ angular.module('blab')
   .controller('LedgerDetailController', LedgerDetailController);
 
 function LedgerDetailController($routeParams, $http, $location, TokenRepository, REST_API_URL) {
-  this.ethereumAddress = $routeParams.id;
+  var vm = this;
+  vm.ethereumAddress = $routeParams.id;
 
-  this.createTransaction = function() {
+  vm.createTransaction = function() {
     TokenRepository.fetchToken().then(function(token) {
       $http.post(REST_API_URL + '/transactions',
         {
-          to: this.ethereumAddress,
-          amount: this.amountToSend
+          to: vm.ethereumAddress,
+          amount: vm.amountToSend
         },
         {
           headers: {
