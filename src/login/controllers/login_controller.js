@@ -3,11 +3,11 @@
 angular.module('blab')
   .controller('LoginController', LoginController);
 
-function LoginController($scope, $http, TokenRepository, REST_API_URL, $location) {
-  $scope.login = function () {
+function LoginController($http, TokenRepository, REST_API_URL, $location) {
+  this.login = function () {
     $http.post(REST_API_URL + '/auth', {
-        'email': $scope.username,
-        'password': $scope.password
+        'email': this.username,
+        'password': this.password
       }
     ).then(function (response) {
       TokenRepository.store(response.data);
