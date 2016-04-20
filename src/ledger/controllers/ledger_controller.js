@@ -3,11 +3,13 @@
 angular.module('blab')
   .controller('BlabController', BlabController);
 
-function BlabController($scope, TokenRepository, Ledgers) {
-  $scope.text = [];
+function BlabController(TokenRepository, Ledgers) {
+  var vm = this;
+
+  vm.text = [];
   TokenRepository.fetchToken().then(function(token) {
     Ledgers.getAll(token).then(function(resp) {
-      $scope.text = resp.data;
+      vm.text = resp.data;
     })
   });
 };
