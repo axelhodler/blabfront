@@ -5,12 +5,26 @@
     .service('Ledgers', Ledgers);
 
   function Ledgers($http, REST_API_URL) {
-    this.getAll = function(token) {
-      return $http.get(REST_API_URL + '/ledgers', {
+    var authorizationHeader = function(value) {
+      return {
         headers: {
-          "Authorization": token
+          "Authorization": value
         }
-      });
-    }
+      }
+    };
+
+    this.getAll = function(token) {
+      return $http.get(REST_API_URL + '/ledgers', authorizationHeader(token));
+    };
+
+    this.createTransaction = function(token, toAddress, amount) {
+      return $http.post(REST_API_URL + '/transactions',
+        {
+          to: toAddress,
+          amount: amount
+        },
+        authorizationHeader(token)
+      );
+    };
   }
 })();
