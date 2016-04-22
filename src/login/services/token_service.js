@@ -8,7 +8,7 @@
     var TOKEN_KEY = 'jwt';
 
     this.store = function(token) {
-      $localForage.setItem(TOKEN_KEY, token);
+      return $localForage.setItem(TOKEN_KEY, token);
     },
     this.fetchToken = function() {
       return $localForage.getItem('jwt');
