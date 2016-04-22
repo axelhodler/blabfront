@@ -1,8 +1,10 @@
 <div ng-controller="LoginController as login">
-  <h1>Login</h1>
-  <form name="login_form" ng-submit="login.login()">
-    <input id="username" ng-model="login.username" placeholder="email" required/>
-    <input type="password" ng-model="login.password" placeholder="password" required/>
-    <input type="submit" class="btn btn-primary" ng-disabled="login_form.$invalid"/>
-  </form>
+  <div class="col-md-3">
+    <form class="form-signin" name="login_form" ng-submit="login.login()">
+      <h1 class="form-signin-heading">Login</h1>
+      <input class="form-control" id="username" ng-model="login.username" placeholder="email" required/>
+      <input class="form-control" type="password" ng-model="login.password" placeholder="password" required/>
+      <input type="submit" class="btn btn-primary" ng-disabled="login_form.$invalid"/>
+    </form>
+  </div>
 </div>
