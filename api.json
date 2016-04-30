@@ -1,0 +1,52 @@
+{
+  "auth": {
+    "email": "mail0@test.com",
+    "password": "pw0"
+  },
+  "transactions": {
+    "to": "0x7f343be8c0a7134767e20e69dba030de52441e1e",
+    "amount": 123
+  },
+  "ledgers": [
+    {
+      "ethereumAddress": "0xf9e60bfddd07d671d3e9bf1f086710ced54da624",
+      "tokenAmount": "9490"
+    },
+    {
+      "ethereumAddress": "0x713ea3b1a28a2b9ff7f157b2e1dbf438e41dbe59",
+      "tokenAmount": "200"
+    },
+    {
+      "ethereumAddress": "0xc46ad63d63eb3f4389ed7ebfa577d3938065cc82",
+      "tokenAmount": "300"
+    },
+    {
+      "ethereumAddress": "0x1339086074401131b72094f24ef01da6075c6125",
+      "tokenAmount": "10"
+    },
+    {
+      "ethereumAddress": "0x7f343be8c0a7134767e20e69dba030de52441e1e",
+      "tokenAmount": "0"
+    },
+    {
+      "ethereumAddress": "0x3f7952fa72e549e01b02652ac16588ad9ee1e782",
+      "tokenAmount": "0"
+    },
+    {
+      "ethereumAddress": "0x10554ec5df205ede8b27fffd186c1abbf698fa2e",
+      "tokenAmount": "0"
+    },
+    {
+      "ethereumAddress": "0x193480bb49a3a9a028d638286dbe546d327356e0",
+      "tokenAmount": "0"
+    },
+    {
+      "ethereumAddress": "0x651af2594d0b29225d439d35ebc97d66e9d59d90",
+      "tokenAmount": "0"
+    },
+    {
+      "ethereumAddress": "0x4e6db6fb0a9de26f4e0235ae591a2947ced58cc7",
+      "tokenAmount": "0"
+    }
+  ]
+}

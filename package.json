@@ -9,6 +9,7 @@
     "json-server": "0.8.10"
   },
   "scripts": {
+    "startfake": "./node_modules/json-server/bin/index.js --watch api.json & npm start && kill %1",
     "start": "./node_modules/http-server/bin/http-server"
   }
 }
