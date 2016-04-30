@@ -9,10 +9,11 @@
 
     this.store = function(token) {
       return $localForage.setItem(TOKEN_KEY, token);
-    },
+    };
+
     this.fetchToken = function() {
       return $localForage.getItem('jwt');
-    }
+    };
   }
 
 })();
