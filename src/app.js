@@ -21,4 +21,4 @@ angular.module('blab', [
       })
   }])
 
-  .constant('REST_API_URL', 'http://gkapi.hodler.co:3000');
+  .constant('REST_API_URL', 'http://localhost:3000');
