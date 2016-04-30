@@ -9,7 +9,8 @@ angular.module('blab', [
     $routeProvider
       .when('/', {
         templateUrl: 'src/login/templates/login_form',
-        controller: 'LoginController'
+        controller: 'LoginController',
+        controllerAs: 'login'
       })
       .when('/ledger', {
         templateUrl: 'src/ledger/templates/overview',
