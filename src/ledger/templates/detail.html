@@ -1,11 +1,9 @@
-<div ng-controller="LedgerDetailController as detail">
-  <h1>Details of Account: {{ detail.ethereumAddress }}</h1>
+<h1>Details of Account: {{ detail.ethereumAddress }}</h1>
 
-  <form ng-submit="detail.createTransaction()">
-    <input type="number" id="amount" ng-model="detail.amountToSend" required/>
-    <input type="submit"
-           value="Send"
-           class="btn btn-primary"
-           ng-disabled="login_form.$invalid"/>
-  </form>
-</div>
+<form ng-submit="detail.createTransaction()">
+  <input type="number" id="amount" ng-model="detail.amountToSend" required/>
+  <input type="submit"
+         value="Send"
+         class="btn btn-primary"
+         ng-disabled="login_form.$invalid"/>
+</form>
