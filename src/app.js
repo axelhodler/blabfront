@@ -13,7 +13,8 @@ angular.module('blab', [
       })
       .when('/ledger', {
         templateUrl: 'src/ledger/templates/overview',
-        controller: 'BlabController'
+        controller: 'BlabController',
+        controllerAs: 'overview'
       })
       .when('/ledger/:id', {
         templateUrl: 'src/ledger/templates/detail',
