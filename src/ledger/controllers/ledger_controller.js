@@ -3,7 +3,7 @@
 angular.module('blab')
   .controller('BlabController', BlabController);
 
-function BlabController(TokenRepository, Ledgers) {
+function BlabController(Ledgers) {
   var vm = this;
 
   vm.text = [];
