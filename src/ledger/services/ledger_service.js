@@ -4,7 +4,11 @@
   angular.module('blab')
     .service('Ledgers', Ledgers);
 
-  function Ledgers($http, REST_API_URL) {
+  function Ledgers($http, $window, REST_API_URL) {
+    var getToken = function() {
+      return $window.sessionStorage.token;
+    };
+
     var authorizationHeader = function(value) {
       return {
         headers: {
@@ -13,17 +17,17 @@
       }
     };
 
-    this.getAll = function(token) {
-      return $http.get(REST_API_URL + '/ledgers', authorizationHeader(token));
+    this.getAll = function() {
+      return $http.get(REST_API_URL + '/ledgers', authorizationHeader(getToken()));
     };
 
-    this.createTransaction = function(token, toAddress, amount) {
+    this.createTransaction = function(toAddress, amount) {
       return $http.post(REST_API_URL + '/transactions',
         {
           to: toAddress,
           amount: amount
         },
-        authorizationHeader(token)
+        authorizationHeader(getToken())
       );
     };
   }

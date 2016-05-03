@@ -6,6 +6,15 @@ describe('LedgerService', function () {
 
   beforeEach(module('blab'));
 
+  beforeEach(module(function($provide) {
+    var windowStub = {
+      sessionStorage: {
+        token : 'token'
+      }
+    };
+    $provide.value('$window', windowStub);
+  }));
+
   beforeEach(inject(function (_Ledgers_, _$httpBackend_, _REST_API_URL_) {
     subject = _Ledgers_;
     http = _$httpBackend_;
@@ -27,7 +36,7 @@ describe('LedgerService', function () {
     http.expectGET(this.REST_API_URL + '/ledgers',
       authorizationHeader('token')).respond({data: 'stubbedResponse'});
 
-    var returnValue = subject.getAll('token');
+    var returnValue = subject.getAll();
     http.flush();
 
     isPromise(returnValue);
@@ -41,7 +50,7 @@ describe('LedgerService', function () {
       amount: 12
     }, expectedAuthorizationHeader).respond({});
 
-    var returnValue = subject.createTransaction('token', 'toAddress', 12);
+    var returnValue = subject.createTransaction('toAddress', 12);
     http.flush();
 
     isPromise(returnValue);

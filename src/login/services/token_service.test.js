@@ -6,7 +6,7 @@ describe('TokenService', function () {
 
   beforeEach(module('blab'));
 
-  beforeEach(module(function ($provide) {
+  beforeEach(module(function($provide) {
     localForageMock = {
       setItem: function() {
       },

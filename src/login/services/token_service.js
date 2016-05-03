@@ -4,10 +4,11 @@
   angular.module('blab')
     .service('TokenRepository', TokenRepository);
 
-  function TokenRepository($localForage) {
+  function TokenRepository($localForage, $window) {
     var TOKEN_KEY = 'jwt';
 
     this.store = function(token) {
+      $window.sessionStorage.token = token;
       return $localForage.setItem(TOKEN_KEY, token);
     };
 

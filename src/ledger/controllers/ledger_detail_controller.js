@@ -3,14 +3,13 @@
 angular.module('blab')
   .controller('LedgerDetailController', LedgerDetailController);
 
-function LedgerDetailController($routeParams, $location, Ledgers, TokenRepository) {
+function LedgerDetailController($routeParams, $location, Ledgers) {
   var vm = this;
   vm.ethereumAddress = $routeParams.id;
 
   vm.createTransaction = function() {
-    TokenRepository.fetchToken().then(function(token) {
-      Ledgers.createTransaction(token, vm.ethereumAddress, vm.amountToSend);
+    Ledgers.createTransaction(vm.ethereumAddress, vm.amountToSend).then(function() {
+      $location.path('/ledger');
     });
-    $location.path('/ledger');
   }
 };
