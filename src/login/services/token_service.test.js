@@ -1,21 +1,12 @@
 'use strict';
 
 describe('TokenService', function () {
-  var subject,
-    localForageMock;
+  var subject;
 
   beforeEach(module('blab'));
 
   beforeEach(module(function($provide) {
-    localForageMock = {
-      setItem: function() {
-      },
-      getItem: function() {
-        return 'stubbedToken';
-      }
-    };
-    spyOn(localForageMock, 'setItem');
-    $provide.value("$localForage", localForageMock);
+    $provide.value('$window', { sessionStorage: { token: ''}});
   }));
 
   beforeEach(inject(function (_TokenRepository_) {
@@ -25,12 +16,7 @@ describe('TokenService', function () {
   it('stores token', function () {
     subject.store('token');
 
-    expect(localForageMock.setItem).toHaveBeenCalledWith('jwt', 'token');
+    expect(subject.fetchToken()).toBe('token')
   });
 
-  it('retrieves token', function () {
-    var token = subject.fetchToken();
-
-    expect(token).toBe('stubbedToken');
-  });
 });

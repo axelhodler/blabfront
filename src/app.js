@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('blab', [
-  'ngRoute',
-  'LocalForageModule'
+  'ngRoute'
 ])
 
   .config(['$routeProvider', function($routeProvider) {

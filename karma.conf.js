@@ -14,8 +14,6 @@ module.exports = function(config) {
     files: [
       'vendor/angular-1.5.4.js',
       'vendor/dev/angular-mocks-1.5.5.js',
-      'vendor/localforage-1.3.0.js',
-      'vendor/angular-localForage-1.2.5.js',
       'vendor/angular-route-1.5.4-build.4747.js',
       'src/app.js',
       'src/**/*.js'
