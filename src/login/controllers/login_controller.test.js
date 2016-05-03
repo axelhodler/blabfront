@@ -3,9 +3,8 @@
 describe('LoginController', function() {
   var subject,
     deferredLogin,
-    deferredTokenStorage,
     LoginServiceMock,
-    TokenRepositoryMock,
+    TokenRepositorySpy,
     locationSpy,
     $rootScope;
 
@@ -16,13 +15,12 @@ describe('LoginController', function() {
     $rootScope = _$rootScope_;
 
     deferredLogin = _$q_.defer();
-    deferredTokenStorage = _$q_.defer();
 
     LoginServiceMock = _LoginService_;
     spyOn(LoginServiceMock, 'login').and.returnValue(deferredLogin.promise);
 
-    TokenRepositoryMock = _TokenRepository_;
-    spyOn(TokenRepositoryMock, 'store').and.returnValue(deferredTokenStorage.promise);
+    TokenRepositorySpy = _TokenRepository_;
+    spyOn(TokenRepositorySpy, 'store');
 
     locationSpy = _$location_;
     spyOn(locationSpy, 'path');
@@ -30,7 +28,7 @@ describe('LoginController', function() {
     subject = _$controller_('LoginController', {
       '$location': locationSpy,
       'LoginService': LoginServiceMock,
-      'TokenRepository': TokenRepositoryMock
+      'TokenRepository': TokenRepositorySpy
     });
     subject.username = 'username';
     subject.password = 'pw';
@@ -38,13 +36,12 @@ describe('LoginController', function() {
 
   it('stores tokens', function () {
     deferredLogin.resolve({data: 'token'});
-    deferredTokenStorage.resolve();
 
     subject.login();
     $rootScope.$digest();
 
     expect(LoginServiceMock.login).toHaveBeenCalledWith('username', 'pw');
-    expect(TokenRepositoryMock.store).toHaveBeenCalledWith('token');
+    expect(TokenRepositorySpy.store).toHaveBeenCalledWith('token');
     expect(locationSpy.path).toHaveBeenCalledWith('/ledger');
   });
 });
