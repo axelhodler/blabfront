@@ -2,9 +2,16 @@
 Owner of address {{ detail.ethereumAddress }}
 
 <form ng-submit="detail.createTransaction()">
-  <input type="number" id="amount" ng-model="detail.amountToSend" required/>
+
+  <input type="number"
+         id="amount"
+         ng-model="detail.amountToSend"
+         placeholder="blab amount"
+         required/>
+
   <input type="submit"
          value="Send"
          class="btn btn-primary"
          ng-disabled="login_form.$invalid"/>
+
 </form>
