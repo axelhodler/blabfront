@@ -1,4 +1,5 @@
-<h1>Details of Account: {{ detail.ethereumAddress }}</h1>
+<h5>Send tokens to {{ detail.owner}}</h5>
+Owner of address {{ detail.ethereumAddress }}
 
 <form ng-submit="detail.createTransaction()">
   <input type="number" id="amount" ng-model="detail.amountToSend" required/>

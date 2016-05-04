@@ -2,12 +2,12 @@
 
 <table class="table">
   <tr>
-    <th>Addr</th>
+    <th>Name</th>
     <th>Amount</th>
     <th></th>
   </tr>
   <tr ng-repeat="item in overview.text | orderBy:'-tokenAmount'">
-    <td>{{item.ethereumAddress}}</td>
+    <td>{{item.owner}}</td>
     <td>{{item.tokenAmount}}</td>
     <td><a class="btn btn-primary" href="#/ledger/{{item.ethereumAddress}}">Details</a></td>
   </tr>
