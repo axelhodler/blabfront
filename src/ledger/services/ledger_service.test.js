@@ -21,20 +21,13 @@ describe('LedgerService', function () {
     this.REST_API_URL = _REST_API_URL_;
   }));
 
-  var authorizationHeader = function(value) {
-    return {
-      'Authorization':value,
-      'Accept':'application/json, text/plain, */*'
-    };
-  };
-
   var isPromise = function(value) {
     expect(value.then).toEqual(jasmine.any(Function));
   };
 
   it('gets all ledger entries', function () {
-    http.expectGET(this.REST_API_URL + '/ledgers',
-      authorizationHeader('token')).respond({data: 'stubbedResponse'});
+    http.expectGET(this.REST_API_URL + '/ledgers')
+      .respond({data: 'stubbedResponse'});
 
     var returnValue = subject.getAll();
     http.flush();
@@ -43,8 +36,8 @@ describe('LedgerService', function () {
   });
 
   it('can get single ledger entry by id', function () {
-    http.expectGET(this.REST_API_URL + '/ledgers/id',
-      authorizationHeader('token')).respond({data: 'stubbedResponse'});
+    http.expectGET(this.REST_API_URL + '/ledgers/id')
+      .respond({data: 'stubbedResponse'});
 
     var returnValue = subject.getOneById('id');
     http.flush();
@@ -53,12 +46,10 @@ describe('LedgerService', function () {
   });
 
   it('creates transactions', function() {
-    var expectedAuthorizationHeader = authorizationHeader('token');
-    expectedAuthorizationHeader['Content-Type'] = 'application/json;charset=utf-8';
     http.expectPOST(this.REST_API_URL + '/transactions', {
       to: 'toAddress',
       amount: 12
-    }, expectedAuthorizationHeader).respond({});
+    }).respond({});
 
     var returnValue = subject.createTransaction('toAddress', 12);
     http.flush();
