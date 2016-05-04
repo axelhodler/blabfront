@@ -24,5 +24,6 @@ function LedgerDetailController($routeParams, $location, Ledgers, ExchangeServic
 
   vm.exchangeToEuro = function() {
     ExchangeService.toEuro(vm.amountToExchange);
+    vm.data.tokenAmount -= vm.amountToExchange;
   }
 };

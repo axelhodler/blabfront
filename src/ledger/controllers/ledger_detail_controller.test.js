@@ -78,5 +78,14 @@ describe('LedgerDetailController', function () {
 
       expect(exchangeServiceSpy.toEuro).toHaveBeenCalledWith(100);
     });
+
+    it('exchange reduces the tokenamount by the exchanged amount', function() {
+      subject.amountToExchange = 100;
+      subject.data.tokenAmount = 102;
+
+      subject.exchangeToEuro();
+
+      expect(subject.data.tokenAmount).toBe(2);
+    });
   });
 });
