@@ -18,9 +18,13 @@ describe('ExchangeService', function () {
 
   it('can post exchange request', function () {
     var amountToExchange = 100;
-    httpBackend.expectPOST(this.REST_API_URL + '/exchange', { amount: amountToExchange }).respond({});
+    var recipient = 'etherAddressAsRecipientId';
+    httpBackend.expectPOST(this.REST_API_URL + '/exchange', {
+      amount: amountToExchange,
+      recipient: recipient
+    }).respond({});
 
-    var response = subject.toEuro(amountToExchange);
+    var response = subject.toEuro(amountToExchange, recipient);
     httpBackend.flush();
 
     isPromise(response);

@@ -76,7 +76,7 @@ describe('LedgerDetailController', function () {
 
       subject.exchangeToEuro();
 
-      expect(exchangeServiceSpy.toEuro).toHaveBeenCalledWith(100);
+      expect(exchangeServiceSpy.toEuro).toHaveBeenCalledWith(100, subject.ethereumAddress);
     });
 
     it('exchange reduces the tokenamount by the exchanged amount', function() {
