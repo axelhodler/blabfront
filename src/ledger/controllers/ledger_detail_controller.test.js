@@ -4,6 +4,7 @@ describe('LedgerDetailController', function () {
   var subject,
     locationSpy,
     deferredTransaction,
+    deferredLedgerEntry,
     ledgerStub,
     rootScope;
 
@@ -15,8 +16,10 @@ describe('LedgerDetailController', function () {
     spyOn(locationSpy, 'path');
 
     deferredTransaction = _$q_.defer();
+    deferredLedgerEntry = _$q_.defer();
     ledgerStub = _Ledgers_;
     spyOn(ledgerStub, 'createTransaction').and.returnValue(deferredTransaction.promise);
+    spyOn(ledgerStub, 'getOneById').and.returnValue(deferredLedgerEntry.promise);
 
     subject = _$controller_('LedgerDetailController', {
       $routeParams: { id: 'ethereumAddress'},
@@ -27,6 +30,14 @@ describe('LedgerDetailController', function () {
 
   it('uses account id in the route params', function () {
     expect(subject.ethereumAddress).toBe('ethereumAddress');
+  });
+
+  it('fetches the single ledger infos', function() {
+    deferredLedgerEntry.resolve({owner: 'Ulysses the User'});
+
+    rootScope.$digest();
+
+    expect(subject.owner).toBe('Ulysses the User');
   });
 
   it('can create transactions', function() {
