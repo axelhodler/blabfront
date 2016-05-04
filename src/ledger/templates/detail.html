@@ -2,10 +2,12 @@
 <div>Owner of address {{ detail.ethereumAddress }}</div>
 <div>Current balance: {{ detail.data.tokenAmount }}</div>
 
-<form ng-submit="detail.createTransaction()">
+<h3>Compensation</h3>
+<form name="compensation_form"
+      ng-submit="detail.createTransaction()">
 
   <input type="number"
-         id="amount"
+         id="blabToSend"
          ng-model="detail.amountToSend"
          placeholder="blab amount"
          required/>
@@ -13,6 +15,23 @@
   <input type="submit"
          value="Send"
          class="btn btn-primary"
-         ng-disabled="login_form.$invalid"/>
+         ng-disabled="compensation_form.$invalid"/>
+
+</form>
+<hr>
+<h3>Exchange Blab to Euro</h3>
+<form name="exchange_form"
+      ng-submit="detail.exchangeToEuro()">
+
+  <input type="number"
+         id="blabToExchange"
+         ng-model="detail.amountToExchange"
+         placeholder="amount to exchange"
+         required/>
+
+  <input type="submit"
+         value="Send"
+         class="btn btn-primary"
+         ng-disabled="exchange_form.$invalid"/>
 
 </form>

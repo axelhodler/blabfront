@@ -49,4 +49,8 @@ describe('LedgerDetailController', function () {
 
     expect(locationSpy.path).toHaveBeenCalledWith('/ledger');
   });
+
+  it('can exchange blab to euro', function() {
+    subject.amountToExchange = 100;
+  });
 });
