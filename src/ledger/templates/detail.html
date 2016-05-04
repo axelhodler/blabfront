@@ -1,5 +1,6 @@
-<h5>Send tokens to: {{ detail.owner}}</h5>
-Owner of address {{ detail.ethereumAddress }}
+<h5>Send tokens to: {{ detail.data.owner}}</h5>
+<div>Owner of address {{ detail.ethereumAddress }}</div>
+<div>Current balance: {{ detail.data.tokenAmount }}</div>
 
 <form ng-submit="detail.createTransaction()">
 

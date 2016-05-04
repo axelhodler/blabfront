@@ -33,11 +33,11 @@ describe('LedgerDetailController', function () {
   });
 
   it('fetches the single ledger infos', function() {
-    deferredLedgerEntry.resolve({data: {owner: 'Ulysses the User'}});
+    deferredLedgerEntry.resolve({data: 'data'});
 
     rootScope.$digest();
 
-    expect(subject.owner).toBe('Ulysses the User');
+    expect(subject.data).toBe('data')
   });
 
   it('can create transactions', function() {
