@@ -12,11 +12,17 @@ describe('ExchangeService', function () {
     this.REST_API_URL = _REST_API_URL_;
   }));
 
+  var isPromise = function(value) {
+    expect(value.then).toEqual(jasmine.any(Function));
+  };
+
   it('can post exchange request', function () {
     var amountToExchange = 100;
     httpBackend.expectPOST(this.REST_API_URL + '/exchange', { amount: amountToExchange }).respond({});
 
-    subject.toEuro(amountToExchange);
+    var response = subject.toEuro(amountToExchange);
     httpBackend.flush();
+
+    isPromise(response);
   });
 });

@@ -5,7 +5,7 @@ angular.module('blab')
 
 function ExchangeService($http, REST_API_URL) {
   this.toEuro = function(amount) {
-    $http.post(REST_API_URL + '/exchange', {
+    return $http.post(REST_API_URL + '/exchange', {
       amount: amount
     });
   }
