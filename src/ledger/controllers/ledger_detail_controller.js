@@ -3,7 +3,7 @@
 angular.module('blab')
   .controller('LedgerDetailController', LedgerDetailController);
 
-function LedgerDetailController($routeParams, $location, Ledgers) {
+function LedgerDetailController($routeParams, $location, Ledgers, ExchangeService) {
   var vm = this;
   vm.ethereumAddress = $routeParams.id;
   vm.data = {};
@@ -21,4 +21,8 @@ function LedgerDetailController($routeParams, $location, Ledgers) {
   vm.isAllowedToExchangeChosenAmount = function() {
     return vm.data.tokenAmount >= vm.amountToExchange;
   };
+
+  vm.exchangeToEuro = function() {
+    ExchangeService.toEuro(vm.amountToExchange);
+  }
 };

@@ -6,11 +6,12 @@ describe('LedgerDetailController', function () {
     deferredTransaction,
     deferredLedgerEntry,
     ledgerStub,
+    exchangeServiceSpy,
     rootScope;
 
   beforeEach(module('blab'));
 
-  beforeEach(inject(function(_$controller_, _$rootScope_, _$q_, _Ledgers_) {
+  beforeEach(inject(function(_$controller_, _$rootScope_, _$q_, _Ledgers_, _ExchangeService_) {
     rootScope = _$rootScope_;
     locationSpy = { path: function() {}};
     spyOn(locationSpy, 'path');
@@ -21,10 +22,14 @@ describe('LedgerDetailController', function () {
     spyOn(ledgerStub, 'createTransaction').and.returnValue(deferredTransaction.promise);
     spyOn(ledgerStub, 'getOneById').and.returnValue(deferredLedgerEntry.promise);
 
+    exchangeServiceSpy = _ExchangeService_;
+    spyOn(exchangeServiceSpy, 'toEuro');
+
     subject = _$controller_('LedgerDetailController', {
       $routeParams: { id: 'ethereumAddress'},
       $location: locationSpy,
-      Ledgers: ledgerStub
+      Ledgers: ledgerStub,
+      ExchangeService: exchangeServiceSpy
     });
   }));
 
@@ -67,6 +72,11 @@ describe('LedgerDetailController', function () {
 
     it('can exchange blab to euro', function() {
       subject.amountToExchange = 100;
+      subject.data.tokenAmount = 102;
+
+      subject.exchangeToEuro();
+
+      expect(exchangeServiceSpy.toEuro).toHaveBeenCalledWith(100);
     });
   });
 });
