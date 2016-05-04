@@ -32,6 +32,6 @@
   <input type="submit"
          value="Send"
          class="btn btn-primary"
-         ng-disabled="exchange_form.$invalid"/>
+         ng-disabled="exchange_form.$invalid || !detail.isAllowedToExchangeChosenAmount()"/>
 
 </form>

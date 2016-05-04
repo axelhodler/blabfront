@@ -6,6 +6,7 @@ angular.module('blab')
 function LedgerDetailController($routeParams, $location, Ledgers) {
   var vm = this;
   vm.ethereumAddress = $routeParams.id;
+  vm.data = {};
 
   Ledgers.getOneById(vm.ethereumAddress).then(function(entry) {
     vm.data = entry.data;
@@ -15,5 +16,9 @@ function LedgerDetailController($routeParams, $location, Ledgers) {
     Ledgers.createTransaction(vm.ethereumAddress, vm.amountToSend).then(function() {
       $location.path('/ledger');
     });
-  }
+  };
+
+  vm.isAllowedToExchangeChosenAmount = function() {
+    return vm.data.tokenAmount >= vm.amountToExchange;
+  };
 };

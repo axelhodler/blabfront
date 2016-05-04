@@ -50,7 +50,23 @@ describe('LedgerDetailController', function () {
     expect(locationSpy.path).toHaveBeenCalledWith('/ledger');
   });
 
-  it('can exchange blab to euro', function() {
-    subject.amountToExchange = 100;
+  describe('exchanging blab to euro', function() {
+    it('can exchange if owned blab greater or equal to chosen exchange amount', function() {
+      subject.amountToExchange = 100;
+      subject.data.tokenAmount = 100;
+
+      expect(subject.isAllowedToExchangeChosenAmount()).toBe(true);
+    });
+
+    it('cannot exchange if owned blab less than chosen exchange amount', function() {
+      subject.amountToExchange = 2;
+      subject.data.tokenAmount = 1;
+
+      expect(subject.isAllowedToExchangeChosenAmount()).toBe(false);
+    });
+
+    it('can exchange blab to euro', function() {
+      subject.amountToExchange = 100;
+    });
   });
 });
