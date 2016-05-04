@@ -1,6 +1,6 @@
 'use strict';
 
-fdescribe('authInterceptor', function() {
+describe('authInterceptor', function() {
   var subject,
     TokenRepositoryStub;
 
