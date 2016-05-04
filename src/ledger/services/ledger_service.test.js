@@ -42,6 +42,16 @@ describe('LedgerService', function () {
     isPromise(returnValue);
   });
 
+  it('can get single ledger entry by id', function () {
+    http.expectGET(this.REST_API_URL + '/ledgers/id',
+      authorizationHeader('token')).respond({data: 'stubbedResponse'});
+
+    var returnValue = subject.getOneById('id');
+    http.flush();
+
+    isPromise(returnValue);
+  });
+
   it('creates transactions', function() {
     var expectedAuthorizationHeader = authorizationHeader('token');
     expectedAuthorizationHeader['Content-Type'] = 'application/json;charset=utf-8';
