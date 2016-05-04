@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('blab', [
-  'ngRoute'
+  'ngRoute',
+  'angular-jwt'
 ])
 
   .config(['$routeProvider', function($routeProvider) {

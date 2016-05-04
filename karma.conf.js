@@ -15,6 +15,7 @@ module.exports = function(config) {
       'vendor/angular-1.5.4.js',
       'vendor/dev/angular-mocks-1.5.5.js',
       'vendor/angular-route-1.5.4-build.4747.js',
+      'vendor/angular-jwt-0.0.9.js',
       'src/app.js',
       'src/**/*.js'
     ],
