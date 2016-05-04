@@ -8,7 +8,7 @@ function LedgerDetailController($routeParams, $location, Ledgers) {
   vm.ethereumAddress = $routeParams.id;
 
   Ledgers.getOneById(vm.ethereumAddress).then(function(entry) {
-    vm.owner = entry.owner;
+    vm.owner = entry.data.owner;
   });
 
   vm.createTransaction = function() {

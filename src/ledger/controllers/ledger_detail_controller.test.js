@@ -33,7 +33,7 @@ describe('LedgerDetailController', function () {
   });
 
   it('fetches the single ledger infos', function() {
-    deferredLedgerEntry.resolve({owner: 'Ulysses the User'});
+    deferredLedgerEntry.resolve({data: {owner: 'Ulysses the User'}});
 
     rootScope.$digest();
 
