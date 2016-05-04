@@ -3,9 +3,11 @@
 angular.module('blab')
   .service('ExchangeService', ExchangeService);
 
-function ExchangeService() {
-  this.toEuro = function() {
-    
+function ExchangeService($http, REST_API_URL) {
+  this.toEuro = function(amount) {
+    $http.post(REST_API_URL + '/exchange', {
+      amount: amount
+    });
   }
 }
 
