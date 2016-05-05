@@ -8,8 +8,10 @@
 <body>
 
   <div class="container">
-    <div>
-      header
+    <div ng-controller="NavbarController as nav">
+      <div ng-if="nav.userLoggedIn()">
+        show if logged in
+      </div>
     </div>
 
     <div class="row">
