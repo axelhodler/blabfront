@@ -1,17 +1,28 @@
 'use strict';
 
 describe('NavbarController', function () {
-  var subject;
+  var subject,
+    tokenRepoStub;
 
   beforeEach(module('blab'));
 
-  beforeEach(inject(function (_$controller_) {
-    subject = _$controller_('NavbarController', {
+  beforeEach(inject(function (_$controller_, _TokenRepository_) {
+    tokenRepoStub = _TokenRepository_;
 
+    subject = _$controller_('NavbarController', {
+      TokenRepository: tokenRepoStub
     });
   }));
 
-  it('knows if user is logged in', function () {
-    expect(subject).not.toBeUndefined();
+  describe('is user logged in', function () {
+    it('is false if no user logged in', function () {
+      expect(subject.userLoggedIn()).toBe(false);
+    });
+
+    it('is true if token is present', function () {
+      spyOn(tokenRepoStub, 'getDecodedToken').and.returnValue('tokenPayload');
+
+      expect(subject.userLoggedIn()).toBe(true);
+    });
   });
 });
