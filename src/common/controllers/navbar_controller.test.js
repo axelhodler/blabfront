@@ -24,5 +24,13 @@ describe('NavbarController', function () {
 
       expect(subject.userLoggedIn()).toBe(true);
     });
+
+    it('sets user fullname on the scope if logged in', function() {
+      spyOn(tokenRepoStub, 'getDecodedToken').and.returnValue({fullName: 'Ulysses the User'});
+
+      subject.userLoggedIn();
+
+      expect(subject.loggedInUserFullname).toBe('Ulysses the User');
+    });
   });
 });

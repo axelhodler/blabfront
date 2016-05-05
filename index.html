@@ -10,7 +10,7 @@
   <div class="container">
     <div ng-controller="NavbarController as nav">
       <div ng-if="nav.userLoggedIn()">
-        show if logged in
+        {{nav.loggedInUserFullname}}
       </div>
     </div>
 
