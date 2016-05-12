@@ -1,0 +1,29 @@
+{
+  "bitwise": true,
+  "eqeqeq": true,
+  "forin": true,
+  "freeze": true,
+  "futurehostile": true,
+  "latedef": "nofunc",
+  "noarg": true,
+  "nocomma": true,
+  "nonbsp": true,
+  "nonew": true,
+  "strict": true,
+  "undef": true,
+  "node": true,
+  "browser": true,
+  "globals": {
+    "angular": false,
+    "inject": false,
+    "describe": false,
+    "it": false,
+    "before": false,
+    "expect": false,
+    "beforeEach": false,
+    "spyOn": false,
+    "browser": false,
+    "element": false,
+    "by": false
+  }
+}
