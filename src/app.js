@@ -21,7 +21,7 @@ angular.module('blab', [
         templateUrl: 'src/ledger/templates/detail',
         controller: 'LedgerDetailController',
         controllerAs: 'detail'
-      })
+      });
   }])
 
   .config(function ($httpProvider) {

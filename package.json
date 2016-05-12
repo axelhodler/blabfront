@@ -16,11 +16,15 @@
     "karma-ng-html2js-preprocessor": "^0.2.2",
     "karma-phantomjs-launcher": "^1.0.0",
     "phantomjs": "^2.1.7",
-    "phantomjs-prebuilt": "^2.1.7"
+    "phantomjs-prebuilt": "^2.1.7",
+    "protractor": "^3.3.0"
   },
   "scripts": {
-    "startfake": "./node_modules/json-server/bin/index.js --watch api.json & npm start && kill %1",
-    "start": "./node_modules/http-server/bin/http-server",
-    "test": "./node_modules/karma-cli/bin/karma start"
+    "json-server": "./node_modules/json-server/bin/index.js --quiet --watch api.json",
+    "start": "./node_modules/http-server/bin/http-server --silent",
+    "test": "./node_modules/karma-cli/bin/karma start",
+    "protractor": "./node_modules/protractor/bin/protractor conf.js",
+    "smoke": "npm run json-server & npm start & npm test && npm run protractor && kill %1 && kill %2",
+    "install": "./node_modules/protractor/bin/webdriver-manager update"
   }
 }
