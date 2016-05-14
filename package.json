@@ -24,7 +24,7 @@
     "start": "./node_modules/http-server/bin/http-server --silent",
     "test": "./node_modules/karma-cli/bin/karma start",
     "protractor": "./node_modules/protractor/bin/protractor conf.js",
-    "smoke": "npm run json-server & npm start & npm test && npm run protractor && kill %1 && kill %2",
+    "smoke": "npm run json-server & npm start & npm test && npm run protractor && kill %1 && kill %2 && git checkout -- api.json",
     "install": "./node_modules/protractor/bin/webdriver-manager update"
   }
 }
