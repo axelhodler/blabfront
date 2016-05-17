@@ -21,7 +21,7 @@ describe('TokenService', function () {
   it('stores token', function () {
     subject.store('token');
 
-    expect(subject.fetchToken()).toBe('token')
+    expect(subject.fetchToken()).toBe('token');
   });
 
   it('can decode token if present', function () {

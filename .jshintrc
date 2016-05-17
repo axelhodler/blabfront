@@ -23,6 +23,7 @@
     "spyOn": false,
     "browser": false,
     "element": false,
-    "by": false
+    "by": false,
+    "jasmine": false
   }
 }

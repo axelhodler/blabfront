@@ -13,5 +13,5 @@ function NavbarController(TokenRepository) {
   var setFullNameOnScope = function() {
     vm.loggedInUserFullname = TokenRepository.getDecodedToken().fullName;
     return true;
-  }
+  };
 }

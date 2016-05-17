@@ -9,5 +9,5 @@ function LoginController($location, TokenRepository, LoginService) {
       TokenRepository.store(response.data);
       $location.path('/ledger');
     });
-  }
+  };
 }

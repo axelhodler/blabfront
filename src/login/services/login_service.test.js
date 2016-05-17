@@ -20,5 +20,5 @@ describe('LoginService', function() {
       'password': 'pw'
     }).respond({});
     http.flush();
-  })
+  });
 });

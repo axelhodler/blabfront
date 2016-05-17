@@ -42,7 +42,7 @@ describe('LedgerDetailController', function () {
 
     rootScope.$digest();
 
-    expect(subject.data).toBe('data')
+    expect(subject.data).toBe('data');
   });
 
   it('can create transactions', function() {

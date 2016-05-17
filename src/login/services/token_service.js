@@ -18,7 +18,7 @@
       if (token) {
         return jwtHelper.decodeToken(this.fetchToken());
       }
-    }
+    };
   }
 
 })();

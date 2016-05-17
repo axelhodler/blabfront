@@ -9,6 +9,6 @@ function BlabController(Ledgers) {
   vm.text = [];
   Ledgers.getAll().then(function(resp) {
     vm.text = resp.data;
-  })
+  });
 
-};
+}

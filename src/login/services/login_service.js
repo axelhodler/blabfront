@@ -10,7 +10,7 @@
           'email': mail,
           'password': password
         }
-      )
-    }
-  };
+      );
+    };
+  }
 })();

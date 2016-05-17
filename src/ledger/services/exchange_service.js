@@ -9,6 +9,6 @@ function ExchangeService($http, REST_API_URL) {
       amount: amount,
       recipient: recipient
     });
-  }
+  };
 }
 
