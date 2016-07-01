@@ -20,10 +20,10 @@
   },
   "scripts": {
     "json-server": "./node_modules/json-server/bin/index.js --quiet --watch api.json",
-    "kill-json-server": "lsof -i:3000 | awk 'NR==2{print $2}' | xargs kill",
+    "kill-json-server": "lsof -t -i:3000 | xargs kill",
 
     "start": "./node_modules/http-server/bin/http-server --silent",
-    "kill-server": "lsof -i:8080 | awk 'NR==2{print $2}' | xargs kill",
+    "kill-server": "lsof -t -i:8080 | xargs kill",
 
     "test": "./node_modules/karma-cli/bin/karma start",
     "lint": "./node_modules/jshint/bin/jshint src",
