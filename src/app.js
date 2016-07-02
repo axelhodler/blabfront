@@ -24,8 +24,8 @@ angular.module('blab', [
       });
   }])
 
-  .config(function ($httpProvider) {
+  .config(['$httpProvider', function ($httpProvider) {
     $httpProvider.interceptors.push('authInterceptor');
-  })
+  }])
 
   .constant('REST_API_URL', 'http://localhost:3000');

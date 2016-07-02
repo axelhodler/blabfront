@@ -27,3 +27,5 @@ function LedgerDetailController($routeParams, $location, Ledgers, ExchangeServic
     vm.data.tokenAmount -= vm.amountToExchange;
   };
 }
+
+LedgerDetailController.$inject = ['$routeParams', '$location', 'Ledgers', 'ExchangeService'];

@@ -11,3 +11,5 @@ function LoginController($location, TokenRepository, LoginService) {
     });
   };
 }
+
+LoginController.$inject = ['$location', 'TokenRepository', 'LoginService'];

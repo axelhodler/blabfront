@@ -15,3 +15,5 @@ function NavbarController(TokenRepository) {
     return true;
   };
 }
+
+NavbarController.$inject = ['TokenRepository'];

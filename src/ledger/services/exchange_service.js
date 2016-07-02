@@ -12,3 +12,5 @@ function ExchangeService($http, REST_API_URL) {
   };
 }
 
+ExchangeService.$inject = ['$http', 'REST_API_URL'];
+

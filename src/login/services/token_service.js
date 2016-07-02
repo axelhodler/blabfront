@@ -21,4 +21,5 @@
     };
   }
 
+  TokenRepository.$inject = ['$window', 'jwtHelper'];
 })();
