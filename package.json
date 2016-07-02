@@ -16,15 +16,14 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "phantomjs": "^2.1.7",
     "phantomjs-prebuilt": "^2.1.7",
-    "protractor": "^3.3.0"
+    "protractor": "^3.3.0",
+    "scripty": "^1.6.0"
   },
   "scripts": {
     "json-server": "./node_modules/json-server/bin/index.js --quiet --watch api.json",
     "kill-json-server": "lsof -t -i:3000 | xargs kill",
-
     "start": "./node_modules/http-server/bin/http-server --silent",
     "kill-server": "lsof -t -i:8080 | xargs kill",
-
     "fake": "npm run json-server & npm run start && npm run kill-json-server",
     "test": "./node_modules/karma-cli/bin/karma start",
     "lint": "./node_modules/jshint/bin/jshint src",
