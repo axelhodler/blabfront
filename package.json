@@ -33,6 +33,7 @@
     "smoke": "scripty",
     "install": "./node_modules/protractor/bin/webdriver-manager update",
     "compress": "scripty",
-    "replace_with_compressed": "scripty"
+    "replace_with_compressed": "scripty",
+    "create_distributables": "scripty"
   }
 }
