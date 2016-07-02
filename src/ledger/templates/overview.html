@@ -8,7 +8,9 @@
   </tr>
   <tr ng-repeat="item in overview.text | orderBy:'-tokenAmount'">
     <td>{{item.owner}}</td>
-    <td>{{item.tokenAmount}}</td>
+    <td id="overview_tokenamount_{{$index}}">
+      {{item.tokenAmount}}
+    </td>
     <td><a class="btn btn-primary" href="#/ledger/{{item.ethereumAddress}}">Details</a></td>
   </tr>
 </table>
