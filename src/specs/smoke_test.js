@@ -1,6 +1,7 @@
 'use strict';
 
-var LoginPage = require('./page_objects/login.js');
+var LoginPage = require('./page_objects/login');
+var Overview = require('./page_objects/overview');
 
 describe('Blabfront', function() {
   it('works at least somewhat ;)', function() {
@@ -9,6 +10,7 @@ describe('Blabfront', function() {
     var loginPage = new LoginPage();
     loginPage.login();
 
-    expect(element(by.id('overview_tokenamount_0')).getText()).toEqual("10000");
+    var overview = new Overview();
+    expect(overview.firstTokenAmountInList()).toEqual("10000");
   });
 });
