@@ -13,4 +13,6 @@
       );
     };
   }
+
+  LoginService.$inject = ['$http', 'REST_API_URL'];
 })();

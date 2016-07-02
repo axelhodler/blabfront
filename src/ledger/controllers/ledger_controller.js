@@ -10,5 +10,6 @@ function BlabController(Ledgers) {
   Ledgers.getAll().then(function(resp) {
     vm.text = resp.data;
   });
-
 }
+
+BlabController.$inject = ['Ledgers'];

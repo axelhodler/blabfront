@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('blab')
-    .factory('authInterceptor', function (TokenRepository) {
+    .factory('authInterceptor', ['TokenRepository', function (TokenRepository) {
       return {
         request: function (config) {
           config.headers = config.headers || {};
@@ -13,6 +13,6 @@
           return config;
         }
       };
-  });
+  }]);
 
 })();

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="blab" lang="en">
+<html ng-app="blab" lang="en" ng-strict-di>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,6 +33,7 @@
   <script src="vendor/angular-route-1.5.4-build.4747.js"></script>
   <script src="vendor/angular-jwt-0.0.9.js"></script>
 
+  <!--begin_replace-->
   <script src="src/app.js"></script>
   <script src="src/login/controllers/login_controller.js"></script>
   <script src="src/login/services/token_service.js"></script>
@@ -43,6 +44,7 @@
   <script src="src/ledger/services/ledger_service.js"></script>
   <script src="src/ledger/services/exchange_service.js"></script>
   <script src="src/common/controllers/navbar_controller.js"></script>
+  <!--end-->
 
 </body>
 </html>

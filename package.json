@@ -16,20 +16,26 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "phantomjs": "^2.1.7",
     "phantomjs-prebuilt": "^2.1.7",
-    "protractor": "^3.3.0"
+    "protractor": "^3.3.0",
+    "replace": "^0.3.0",
+    "scripty": "^1.6.0",
+    "uglify-js": "^2.6.4"
   },
   "scripts": {
     "json-server": "./node_modules/json-server/bin/index.js --quiet --watch api.json",
     "kill-json-server": "lsof -t -i:3000 | xargs kill",
-
     "start": "./node_modules/http-server/bin/http-server --silent",
+    "start-dist": "./node_modules/http-server/bin/http-server dist --silent",
     "kill-server": "lsof -t -i:8080 | xargs kill",
-
     "fake": "npm run json-server & npm run start && npm run kill-json-server",
+    "fake-dist": "npm run json-server & npm run start-dist && npm run kill-json-server",
     "test": "./node_modules/karma-cli/bin/karma start",
     "lint": "./node_modules/jshint/bin/jshint src",
     "protractor": "./node_modules/protractor/bin/protractor conf.js",
-    "smoke": "npm run lint && npm run json-server & npm start & npm test && npm run protractor && git checkout -- api.json && npm run kill-json-server && npm run kill-server",
-    "install": "./node_modules/protractor/bin/webdriver-manager update"
+    "smoke": "scripty",
+    "install": "./node_modules/protractor/bin/webdriver-manager update",
+    "compress": "scripty",
+    "replace_with_compressed": "scripty",
+    "create_distributables": "scripty"
   }
 }
