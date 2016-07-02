@@ -1,8 +1,22 @@
 <div class="col-md-3">
-  <form class="form-signin" name="login_form" ng-submit="login.login()">
+  <form class="form-signin"
+        name="login_form"
+        ng-submit="login.login()">
     <h1 class="form-signin-heading">Login</h1>
-    <input id="login_username" class="form-control" ng-model="login.username" placeholder="email" required/>
-    <input id="login_password" class="form-control" type="password" ng-model="login.password" placeholder="password" required/>
-    <input id="login_form_submit" type="submit" class="btn btn-primary" ng-disabled="login_form.$invalid"/>
+    <input id="login_username"
+           class="form-control"
+           placeholder="email"
+           ng-model="login.username"
+           required/>
+    <input id="login_password"
+           class="form-control"
+           type="password"
+           placeholder="password"
+           ng-model="login.password"
+           required/>
+    <input id="login_form_submit"
+           type="submit"
+           class="btn btn-primary"
+           ng-disabled="login_form.$invalid"/>
   </form>
 </div>
