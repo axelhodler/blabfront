@@ -9,6 +9,6 @@ describe('Blabfront', function() {
     var loginPage = new LoginPage();
     loginPage.login();
 
-    expect(element(by.tagName('html')).getText()).toContain("10000");
+    expect(element(by.id('overview_tokenamount_0')).getText()).toEqual("10000");
   });
 });
