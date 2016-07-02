@@ -8,6 +8,6 @@ npm run start-dist & \
 npm run protractor
 
 # cleanup
-git checkout -- api.json
+git checkout api.json
 npm run kill-json-server
 npm run kill-server
