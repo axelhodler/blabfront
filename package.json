@@ -17,6 +17,7 @@
     "phantomjs": "^2.1.7",
     "phantomjs-prebuilt": "^2.1.7",
     "protractor": "^3.3.0",
+    "replace": "^0.3.0",
     "scripty": "^1.6.0",
     "uglify-js": "^2.6.4"
   },
@@ -31,6 +32,7 @@
     "protractor": "./node_modules/protractor/bin/protractor conf.js",
     "smoke": "scripty",
     "install": "./node_modules/protractor/bin/webdriver-manager update",
-    "compress": "scripty"
+    "compress": "scripty",
+    "replace_with_compressed": "scripty"
   }
 }
