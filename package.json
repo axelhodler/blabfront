@@ -30,6 +30,7 @@
     "lint": "./node_modules/jshint/bin/jshint src",
     "protractor": "./node_modules/protractor/bin/protractor conf.js",
     "smoke": "scripty",
-    "install": "./node_modules/protractor/bin/webdriver-manager update"
+    "install": "./node_modules/protractor/bin/webdriver-manager update",
+    "compress": "scripty"
   }
 }
