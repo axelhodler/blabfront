@@ -32,7 +32,7 @@ describe('LogoutService', function () {
       expect(locationSpy.path).toHaveBeenCalledWith('/');
     });
 
-    xit('deletes the token', function() {
+    it('deletes the token', function() {
       subject.logout();
 
       expect(tokenRepoSpy.deleteToken).toHaveBeenCalled();
