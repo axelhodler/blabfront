@@ -13,7 +13,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'vendor/**/*.js',
-      'src/app.js',
+      'src/*.js',
       'src/**/*.js'
     ],
 
