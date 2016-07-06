@@ -2,7 +2,8 @@
 
 describe('LogoutService', function () {
   var subject,
-    locationSpy;
+    locationSpy,
+    tokenRepoSpy;
 
   beforeEach(module('blab'));
 
@@ -10,6 +11,10 @@ describe('LogoutService', function () {
     locationSpy = { path: {}};
     spyOn(locationSpy, 'path');
     $provide.value('$location', locationSpy);
+
+    tokenRepoSpy = { delete: {}};
+    spyOn(tokenRepoSpy, 'delete');
+    $provide.value('TokenRepository', tokenRepoSpy);
   }));
 
   beforeEach(inject(function(_LogoutService_) {
@@ -25,6 +30,12 @@ describe('LogoutService', function () {
       subject.logout();
 
       expect(locationSpy.path).toHaveBeenCalledWith('/');
+    });
+
+    xit('deletes the token', function() {
+      subject.logout();
+
+      expect(tokenRepoSpy.delete).toHaveBeenCalled();
     });
   });
 });
