@@ -24,6 +24,13 @@ describe('TokenService', function () {
     expect(subject.fetchToken()).toBe('token');
   });
 
+  it('can delete stored token', function() {
+    subject.store('token');
+    subject.deleteToken();
+
+    expect(subject.fetchToken()).toBeUndefined();
+  });
+
   it('can decode token if present', function () {
     subject.store('token');
 

@@ -9,6 +9,10 @@
       $window.sessionStorage.token = token;
     };
 
+    this.deleteToken = function() {
+      $window.sessionStorage.token = undefined;
+    };
+
     this.fetchToken = function() {
       return $window.sessionStorage.token;
     };

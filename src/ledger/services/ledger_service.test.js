@@ -6,15 +6,6 @@ describe('LedgerService', function () {
 
   beforeEach(module('blab'));
 
-  beforeEach(module(function($provide) {
-    var windowStub = {
-      sessionStorage: {
-        token : 'token'
-      }
-    };
-    $provide.value('$window', windowStub);
-  }));
-
   beforeEach(inject(function (_Ledgers_, _$httpBackend_, _REST_API_URL_) {
     subject = _Ledgers_;
     http = _$httpBackend_;
