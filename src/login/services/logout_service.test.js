@@ -12,8 +12,8 @@ describe('LogoutService', function () {
     spyOn(locationSpy, 'path');
     $provide.value('$location', locationSpy);
 
-    tokenRepoSpy = { delete: {}};
-    spyOn(tokenRepoSpy, 'delete');
+    tokenRepoSpy = { deleteToken: {}};
+    spyOn(tokenRepoSpy, 'deleteToken');
     $provide.value('TokenRepository', tokenRepoSpy);
   }));
 
@@ -35,7 +35,7 @@ describe('LogoutService', function () {
     xit('deletes the token', function() {
       subject.logout();
 
-      expect(tokenRepoSpy.delete).toHaveBeenCalled();
+      expect(tokenRepoSpy.deleteToken).toHaveBeenCalled();
     });
   });
 });

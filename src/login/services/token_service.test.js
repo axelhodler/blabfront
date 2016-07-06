@@ -26,7 +26,7 @@ describe('TokenService', function () {
 
   it('can delete stored token', function() {
     subject.store('token');
-    subject.delete();
+    subject.deleteToken();
 
     expect(subject.fetchToken()).toBeUndefined();
   });
