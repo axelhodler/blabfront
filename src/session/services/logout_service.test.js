@@ -26,7 +26,7 @@ describe('LogoutService', function () {
   });
 
   describe('logout', function() {
-    it('redirects to login', function() {
+    it('redirects to session', function() {
       subject.logout();
 
       expect(locationSpy.path).toHaveBeenCalledWith('/');

@@ -8,7 +8,7 @@ angular.module('blab', [
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'src/login/templates/login_form',
+        templateUrl: 'src/session/templates/login_form',
         controller: 'LoginController',
         controllerAs: 'login'
       })
