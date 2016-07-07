@@ -5,7 +5,10 @@ describe('LogoutButton', function () {
     scope,
     logoutServiceSpy;
 
-  beforeEach(module('blab'));
+  beforeEach(function() {
+    module('blab');
+    module('templates');
+  });
 
   beforeEach(module(function($provide) {
     logoutServiceSpy = { logout: {}};

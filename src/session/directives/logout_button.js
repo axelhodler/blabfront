@@ -5,7 +5,7 @@ angular.module('blab')
 
 function LogoutButton(LogoutService) {
   return {
-    template: 'asdf',
+    templateUrl: 'src/session/directives/templates/logout_button.html',
     link: function() {
       LogoutService.logout();
     }
