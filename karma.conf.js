@@ -14,7 +14,8 @@ module.exports = function(config) {
     files: [
       'vendor/**/*.js',
       'src/*.js',
-      'src/**/*.js'
+      'src/**/*.js',
+      'src/**/directives/**/*.html'
     ],
 
 
@@ -28,11 +29,11 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-
+      'src/**/directives/**/*.html':['ng-html2js']
     },
 
     ngHtml2JsPreprocessor: {
-
+      moduleName: 'templates'
     },
 
     plugins: [
