@@ -5,18 +5,18 @@ describe('LogoutButton', function () {
     scope,
     logoutServiceSpy;
 
-  beforeEach(function() {
+  beforeEach(function () {
     module('blab');
     module('templates');
   });
 
-  beforeEach(module(function($provide) {
-    logoutServiceSpy = { logout: {}};
+  beforeEach(module(function ($provide) {
+    logoutServiceSpy = {logout: {}};
     spyOn(logoutServiceSpy, 'logout');
     $provide.value('LogoutService', logoutServiceSpy);
   }));
 
-  beforeEach(inject(function(_$compile_, _$rootScope_) {
+  beforeEach(inject(function (_$compile_, _$rootScope_) {
     $compile = _$compile_;
     scope = _$rootScope_.$new();
   }));
@@ -25,6 +25,7 @@ describe('LogoutButton', function () {
     var element = $compile('<div blab-logout-button></div>')(scope);
 
     scope.$digest();
+    element.find('button')[0].click();
 
     expect(logoutServiceSpy.logout).toHaveBeenCalled();
   });

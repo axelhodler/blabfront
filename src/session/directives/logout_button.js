@@ -6,8 +6,10 @@ angular.module('blab')
 function LogoutButton(LogoutService) {
   return {
     templateUrl: 'src/session/directives/templates/logout_button.html',
-    link: function() {
-      LogoutService.logout();
+    link: function(scope) {
+      scope.logout = function() {
+        LogoutService.logout();
+      };
     }
   };
 }
