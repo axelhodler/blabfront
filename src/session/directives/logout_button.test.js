@@ -18,14 +18,6 @@ describe('LogoutButton', function () {
     scope = _$rootScope_.$new();
   }));
 
-  it('exits', function () {
-    var element = $compile('<div blab-logout-button></div>')(scope);
-
-    scope.$digest();
-
-    expect(element.html()).not.toBe('');
-  });
-
   it('can log out', function () {
     var element = $compile('<div blab-logout-button></div>')(scope);
 
