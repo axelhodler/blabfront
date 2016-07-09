@@ -22,7 +22,7 @@
     "uglify-js": "^2.6.4"
   },
   "scripts": {
-    "json-server": "./node_modules/json-server/bin/index.js --quiet --watch api.json",
+    "json-server": "node fake_server.js",
     "kill-json-server": "lsof -t -i:3000 | xargs kill",
     "start": "./node_modules/http-server/bin/http-server --silent",
     "start-dist": "./node_modules/http-server/bin/http-server dist --silent",
