@@ -13,3 +13,5 @@ function LogoutButton(LogoutService) {
     }
   };
 }
+
+LogoutButton.$inject = ['LogoutService'];
