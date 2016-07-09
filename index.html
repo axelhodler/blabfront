@@ -15,6 +15,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                 <li><a>{{nav.loggedInUserFullname}}</a></li>
+                <li blab-logout-button></li>
               </ul>
             </div>
           </div>
@@ -41,6 +42,7 @@
   <script src="src/session/services/token_service.js"></script>
   <script src="src/session/services/login_service.js"></script>
   <script src="src/session/services/logout_service.js"></script>
+  <script src="src/session/directives/logout_button.js"></script>
   <script src="src/session/services/auth_interceptor.js"></script>
   <script src="src/ledger/controllers/ledger_controller.js"></script>
   <script src="src/ledger/controllers/ledger_detail_controller.js"></script>

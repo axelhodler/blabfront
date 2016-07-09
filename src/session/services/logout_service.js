@@ -9,3 +9,5 @@ function LogoutService($location, TokenRepository) {
     $location.path('/');
   };
 }
+
+LogoutService.$inject = ['$location', 'TokenRepository'];
