@@ -10,7 +10,7 @@
     };
 
     this.deleteToken = function() {
-      $window.sessionStorage.token = undefined;
+      delete $window.sessionStorage.token;
     };
 
     this.fetchToken = function() {
