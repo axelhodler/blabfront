@@ -8,20 +8,7 @@
 <body>
 
   <div class="container">
-    <div ng-controller="NavbarController as nav">
-      <div ng-if="nav.userLoggedIn()">
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a>{{nav.loggedInUserFullname}}</a></li>
-                <li blab-logout-button></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
+    <ng-include src="'src/common/templates/navbar.html'"></ng-include>
 
     <div class="row">
       <div class="col-md-12">
