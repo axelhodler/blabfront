@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 git checkout gh-pages
 git merge master -m "merge master to prepare release"
 npm install
