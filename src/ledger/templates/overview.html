@@ -11,6 +11,12 @@
     <td id="overview_tokenamount_{{$index}}">
       {{item.tokenAmount}}
     </td>
-    <td><a class="btn btn-primary" href="#/ledger/{{item.ethereumAddress}}">Details</a></td>
+    <td>
+      <a id="ledger_detailview_{{$index}}"
+         class="btn btn-primary"
+         href="#/ledger/{{item.ethereumAddress}}">
+        Details
+      </a>
+    </td>
   </tr>
 </table>
