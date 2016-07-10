@@ -1,6 +1,6 @@
 #!/bin/sh
 
-git checkout -b gh-pages
+git checkout gh-pages
 git merge master -m "merge master to prepare release"
 npm install
 npm run create_distributables
