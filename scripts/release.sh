@@ -4,6 +4,8 @@ set -e
 
 git checkout gh-pages
 rm -rf *
+git add .
+git commit -m "remove old stuff to avoid merge conflicts"
 git merge master -m "merge master to prepare release"
 npm install
 npm run create_distributables
