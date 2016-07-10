@@ -1,7 +1,7 @@
 'use strict';
 
 var LoginPage = require('./page_objects/login');
-var LogoutPage = require('./page_objects/logout');
+var Navbar = require('./page_objects/navbar');
 var Overview = require('./page_objects/overview');
 
 describe('Blabfront', function() {
@@ -11,8 +11,8 @@ describe('Blabfront', function() {
 
     var loginPage = new LoginPage();
     loginPage.login();
-    var logoutPage = new LogoutPage();
-    logoutPage.logout();
+    var navbar = new Navbar();
+    navbar.logout();
     loginPage.login();
 
     var overview = new Overview();

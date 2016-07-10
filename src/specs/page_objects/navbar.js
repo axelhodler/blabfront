@@ -1,9 +1,9 @@
 'use strict';
 
-var LogoutPage = function() {
+var Navbar = function() {
   this.logout = function() {
     element(by.id("logout_button")).click();
   };
 };
 
-module.exports = LogoutPage;
+module.exports = Navbar;
