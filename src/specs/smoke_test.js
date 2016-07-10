@@ -17,6 +17,7 @@ describe('Blabfront', function() {
 
     var overview = new Overview();
     expect(overview.firstTokenAmountInList()).toEqual("10000");
+    expect(navbar.loggedInUserName()).toEqual('Timmy Tromp');
   });
 
 });
