@@ -2,11 +2,8 @@
 
 set -e
 
-git checkout gh-pages
-rm -rf *
-git add .
-git commit -m "remove old stuff to avoid merge conflicts"
-git merge -X theirs master -m "merge master to prepare release"
+git branch -D gh-pages
+git checkout -b gh-pages
 npm install
 npm run create_distributables
 # NOTE (optional): we could replace the REST API url here
@@ -15,5 +12,5 @@ mv dist/* .
 rm -rf scripts
 git add .
 git commit -m "release"
-git push origin HEAD
+git push origin gh-pages --force
 git checkout master
