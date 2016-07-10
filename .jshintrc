@@ -20,6 +20,7 @@
     "before": false,
     "expect": false,
     "beforeEach": false,
+    "beforeAll": false,
     "spyOn": false,
     "browser": false,
     "element": false,
