@@ -12,3 +12,5 @@ function SessionService(TokenRepository) {
     return TokenRepository.getDecodedToken().fullName;
   };
 }
+
+SessionService.$inject = ['TokenRepository'];

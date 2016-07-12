@@ -3,17 +3,15 @@
 angular.module('blab')
   .controller('NavbarController', NavbarController);
 
-function NavbarController(TokenRepository) {
-  var vm = this;
+function NavbarController(SessionService) {
 
   this.userLoggedIn = function() {
-    return TokenRepository.getDecodedToken() ? setFullNameOnScope() : false;
+    return SessionService.userLoggedIn();
   };
 
-  var setFullNameOnScope = function() {
-    vm.loggedInUserFullname = TokenRepository.getDecodedToken().fullName;
-    return true;
+  this.loggedInUserFullname = function() {
+    return SessionService.loggedInUserFullName();
   };
 }
 
-NavbarController.$inject = ['TokenRepository'];
+NavbarController.$inject = ['SessionService'];
