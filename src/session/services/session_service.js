@@ -3,8 +3,8 @@
 angular.module('blab')
   .service('SessionService', SessionService);
 
-function SessionService() {
+function SessionService(TokenRepository) {
   this.userLoggedIn = function() {
-    return false;
+    return !!TokenRepository.getDecodedToken();
   };
 }
