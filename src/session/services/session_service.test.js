@@ -7,7 +7,11 @@ describe('SessionService', function () {
   beforeEach(module('blab'));
 
   beforeEach(module(function ($provide) {
-    var tokenRepoStub = { getDecodedToken: function() { return stubbedDecodedToken; }};
+    var tokenRepoStub = {
+      getDecodedToken: function() {
+        return stubbedDecodedToken;
+      }
+    };
     $provide.value('TokenRepository', tokenRepoStub);
   }));
 
@@ -25,5 +29,11 @@ describe('SessionService', function () {
     stubbedDecodedToken = 'token';
 
     expect(subject.userLoggedIn()).toBe(true);
+  });
+
+  it('knows name of currently logged in user', function () {
+    stubbedDecodedToken = { fullName : 'Horus'};
+
+    expect(subject.loggedInUserFullName()).toBe('Horus');
   });
 });
