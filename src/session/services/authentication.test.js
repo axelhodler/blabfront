@@ -1,13 +1,13 @@
 'use strict';
 
-describe('LoginService', function() {
+describe('Authentication', function() {
   var subject,
     http;
 
   beforeEach(module('blab'));
 
-  beforeEach(inject(function(_LoginService_, _$httpBackend_, _REST_API_URL_) {
-    subject = _LoginService_;
+  beforeEach(inject(function(_Authentication_, _$httpBackend_, _REST_API_URL_) {
+    subject = _Authentication_;
     http = _$httpBackend_;
     this.REST_API_URL = _REST_API_URL_;
   }));
