@@ -3,7 +3,7 @@
 describe('LoginController', function() {
   var subject,
     deferredLogin,
-    LoginServiceMock,
+    authenticationMock,
     TokenRepositorySpy,
     locationSpy,
     $rootScope;
@@ -11,13 +11,13 @@ describe('LoginController', function() {
   beforeEach(module('blab'));
 
   beforeEach(inject(function (_$controller_, _$q_, _$rootScope_, _$location_,
-                              _LoginService_ , _TokenRepository_) {
+                              _Authentication_ , _TokenRepository_) {
     $rootScope = _$rootScope_;
 
     deferredLogin = _$q_.defer();
 
-    LoginServiceMock = _LoginService_;
-    spyOn(LoginServiceMock, 'login').and.returnValue(deferredLogin.promise);
+    authenticationMock = _Authentication_;
+    spyOn(authenticationMock, 'login').and.returnValue(deferredLogin.promise);
 
     TokenRepositorySpy = _TokenRepository_;
     spyOn(TokenRepositorySpy, 'store');
@@ -27,7 +27,7 @@ describe('LoginController', function() {
 
     subject = _$controller_('LoginController', {
       '$location': locationSpy,
-      'LoginService': LoginServiceMock,
+      'Authentication': authenticationMock,
       'TokenRepository': TokenRepositorySpy
     });
     subject.username = 'username';
@@ -40,7 +40,7 @@ describe('LoginController', function() {
     subject.login();
     $rootScope.$digest();
 
-    expect(LoginServiceMock.login).toHaveBeenCalledWith('username', 'pw');
+    expect(authenticationMock.login).toHaveBeenCalledWith('username', 'pw');
     expect(TokenRepositorySpy.store).toHaveBeenCalledWith('token');
     expect(locationSpy.path).toHaveBeenCalledWith('/ledger');
   });
