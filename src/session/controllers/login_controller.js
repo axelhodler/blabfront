@@ -3,13 +3,10 @@
 angular.module('blab')
   .controller('LoginController', LoginController);
 
-function LoginController($location, TokenRepository, Authentication) {
+function LoginController(Login) {
   this.login = function () {
-    Authentication.login(this.username, this.password).then(function (response) {
-      TokenRepository.store(response.data);
-      $location.path('/ledger');
-    });
+    Login.login(this.username, this.password);
   };
 }
 
-LoginController.$inject = ['$location', 'TokenRepository', 'Authentication'];
+LoginController.$inject = ['Login'];
